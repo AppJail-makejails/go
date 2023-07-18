@@ -18,7 +18,7 @@ OPTION overwrite
 
 INCLUDE options/network.makejail
 
-FROM --entrypoint gh+AppJail-makejails/go go:13.2
+FROM go:13.2
 
 WORKDIR /app
 COPY app/
@@ -31,7 +31,7 @@ WORKDIR /app
 RUN ./hello
 ```
 
-**Note**: Remember that you can use `INCLUDE gh+AppJail-makejails/go` instead of `FROM --entrypoint gh+AppJail-makejails/go go:...` to use build arguments, but when using a specific version of go, you need to change the entry point when building a golang application.
+**Note**: Remember that you can use `INCLUDE gh+AppJail-makejails/go` instead of `FROM go:...` to use build arguments, but when using a specific version of go, you need to change the entry point when building a golang application.
 
 Where `options/network.makejail` are the options that suit your environment, for example:
 
@@ -95,7 +95,7 @@ OPTION overwrite
 
 INCLUDE options/network.makejail
 
-FROM --entrypoint gh+AppJail-makejails/go go:13.2
+FROM go:13.2
 
 WORKDIR /app
 COPY app/
