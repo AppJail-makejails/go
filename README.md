@@ -13,19 +13,25 @@ wikipedia.org/wiki/Go_(programming\_language)
 Create a `Makejail` in your Go app project.
 
 ```
+OPTION start
+OPTION overwrite
+
 INCLUDE options/network.makejail
-INCLUDE gh+AppJail-makejails/go
+
+FROM --entrypoint gh+AppJail-makejails/go go:13.2
 
 WORKDIR /app
 COPY app/
 
-RUN %{GO_EXECUTABLE} build hello.go
+RUN go build hello.go
 
 STAGE cmd
 
 WORKDIR /app
 RUN ./hello
 ```
+
+**Note**: Remember that you can use `INCLUDE gh+AppJail-makejails/go` instead of `FROM --entrypoint gh+AppJail-makejails/go go:...` to use build arguments, but when using a specific version of go, you need to change the entry point when building a golang application.
 
 Where `options/network.makejail` are the options that suit your environment, for example:
 
@@ -84,13 +90,17 @@ RUN ./hello
 **build.makejail**:
 
 ```
+OPTION start
+OPTION overwrite
+
 INCLUDE options/network.makejail
-INCLUDE gh+AppJail-makejails/go
+
+FROM --entrypoint gh+AppJail-makejails/go go:13.2
 
 WORKDIR /app
 COPY app/
 
-RUN %{GO_EXECUTABLE} build hello.go
+RUN go build hello.go
 ```
 
 For simplicity, `Makejail` does not use more options than necessary, but you can use as many as you want without affecting `build.makejail`.
@@ -114,7 +124,7 @@ Much of the size overhead if for jail, but for big applications this is not harm
 
 ### Build Arguments
 
-* `GO_VERSION` (optional): Valid versions are: `118`, `119`, `120`.
+* `GO_VERSION` (default: `120`): Valid versions are: `118`, `119`, `120`.
 * `GO_TAG_PREFIX` (default: `13.2-`).
 
 ## How to use the Image

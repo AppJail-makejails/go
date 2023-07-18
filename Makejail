@@ -1,5 +1,4 @@
-%{GO_EXECUTABLE:go%{GO_VERSION\}}
-%{GO_VERSION:}
+%{GO_VERSION:120}
 %{GO_TAG_PREFIX:13.2-}
 
 INCLUDE options/options.makejail
