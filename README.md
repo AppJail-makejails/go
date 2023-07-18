@@ -122,10 +122,9 @@ Now our jail with the application we want to run has a very reduced size.
 
 Much of the size overhead if for jail, but for big applications this is not harmful.
 
-### Build Arguments
+### Arguments
 
-* `GO_VERSION` (default: `120`): Valid versions are: `118`, `119`, `120`.
-* `GO_TAG_PREFIX` (default: `13.2-`).
+* `go_tag` (default: `13.2`): see [#tags](#tags).
 
 ## How to use the Image
 

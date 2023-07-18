@@ -1,6 +1,5 @@
-%{GO_VERSION:120}
-%{GO_TAG_PREFIX:13.2-}
-
 INCLUDE options/options.makejail
 
-FROM --entrypoint gh+AppJail-makejails/go go:%{GO_TAG_PREFIX}%{GO_VERSION}
+ARG go_tag=13.2
+
+FROM --entrypoint gh+AppJail-makejails/go go:${go_tag}
