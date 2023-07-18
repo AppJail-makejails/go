@@ -1,13 +1,7 @@
 %{GO_EXECUTABLE:go%{GO_VERSION\}}
 %{GO_VERSION:}
+%{GO_TAG_PREFIX:13.2-}
 
 INCLUDE options/options.makejail
 
-VAR --noexpand go_version=%{GO_VERSION}
-
-RAW if [ -n "${go_version}" ] && ! echo "${go_version}" | grep -Eq '^1(18|19|20)$'; then
-	RAW echo "VALID VERSIONS: 118, 119, 120" >&2
-	RAW exit 1
-RAW fi
-
-PKG go${go_version}
+FROM --entrypoint gh+AppJail-makejails/go go:%{GO_TAG_PREFIX}%{GO_VERSION}
