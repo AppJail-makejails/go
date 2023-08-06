@@ -1,0 +1,39 @@
+tags: 13.2
+13.2.arch: amd64
+13.2.name: "go"
+13.2.timestamp.amd64: 1691181320
+13.2.sum.amd64: 861d522434d24e254a56014cac279d5b7e8ad35abac0c106b847f48c1716db72
+13.2.size.amd64: 57776388
+13.2.source.amd64: https://dtxdf.duckdns.org/8eD8O86cz9/go_13_2_amd64_image_appjail
+13.2.source.amd64+: https://storm-bsd.duckdns.org/8eD8O86cz9/go_13_2_amd64_image_appjail
+13.2.source.amd64+: https://anonget.onrender.com/8eD8O86cz9/go_13_2_amd64_image_appjail
+
+tags+: 13.2-118
+13.2-118.arch: amd64
+13.2-118.name: "go"
+13.2-118.timestamp.amd64: 1691182519
+13.2-118.sum.amd64: 7d3fca0518ca624162218329fb7d53f7e4df2b3f431d9dd50520fd2d75c244dd
+13.2-118.size.amd64: 103719812
+13.2-118.source.amd64: https://dtxdf.duckdns.org/n7DbO46azd/go_13_2_118_amd64_image_appjail
+13.2-118.source.amd64+: https://storm-bsd.duckdns.org/n7DbO46azd/go_13_2_118_amd64_image_appjail
+13.2-118.source.amd64+: https://anonget.onrender.com/n7DbO46azd/go_13_2_118_amd64_image_appjail
+
+tags+: 13.2-119
+13.2-119.arch: amd64
+13.2-119.name: "go"
+13.2-119.timestamp.amd64: 1691180255
+13.2-119.sum.amd64: fc29d692f9d4e7635551239f6eafb2c293f853ca59b846c0594a56d837ce742c
+13.2-119.size.amd64: 75142156
+13.2-119.source.amd64: https://dtxdf.duckdns.org/V3CcO265ze/go_13_2_119_amd64_image_appjail
+13.2-119.source.amd64+: https://storm-bsd.duckdns.org/V3CcO265ze/go_13_2_119_amd64_image_appjail
+13.2-119.source.amd64+: https://anonget.onrender.com/V3CcO265ze/go_13_2_119_amd64_image_appjail
+
+tags+: 13.2-120
+13.2-120.arch: amd64
+13.2-120.name: "go"
+13.2-120.timestamp.amd64: 1691178146
+13.2-120.sum.amd64: 23223010351c84b7a813c533ac366657bb236e00ba71338ea1837c3f53266050
+13.2-120.size.amd64: 57643188
+13.2-120.source.amd64: https://dtxdf.duckdns.org/e3D0O069z7/go_13_2_120_amd64_image_appjail
+13.2-120.source.amd64+: https://storm-bsd.duckdns.org/e3D0O069z7/go_13_2_120_amd64_image_appjail
+13.2-120.source.amd64+: https://anonget.onrender.com/e3D0O069z7/go_13_2_120_amd64_image_appjail
