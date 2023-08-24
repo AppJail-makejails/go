@@ -154,12 +154,13 @@ appjail image export go
 
 ### Arguments
 
-* `go_version` (optional): Valid versions are `120` and `119`. If empty (default), the meta-port `lang/go` is used.
+* `go_version` (optional): Valid versions are `121`, `120` and `119`. If empty (default), the meta-port `lang/go` is used.
 
 ## Tags
 
 | Tag        | Arch    | Version           | Type   | `go_version` |
 | ---------- | ------- | ----------------- | ------ | ------------ |
 | `13.2`     | `amd64` | `13.2-RELEASE-p2` | `thin` |       -      |
+| `13.2-121` | `amd64` | `13.2-RELEASE-p2` | `thin` |      121     |
 | `13.2-120` | `amd64` | `13.2-RELEASE-p2` | `thin` |      120     |
 | `13.2-119` | `amd64` | `13.2-RELEASE-p2` | `thin` |      119     |
