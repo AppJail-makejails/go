@@ -1,24 +1,31 @@
 tags: 13.2
 13.2.arch: amd64
 13.2.name: "go"
-13.2.timestamp.amd64: 1692009862
-13.2.sum.amd64: de4eb9fbe48e9ebc3536bfd67a18b08f87c209cdbcee40461f54e94cf3e93cf4
-13.2.size.amd64: 57881504
-13.2.source.amd64: "https://drive.google.com/uc?export=download&id=1tg09TCTm1DCvFpEvd4AJ9XtCGyf1wuIi"
+13.2.timestamp.amd64: 1692901546
+13.2.sum.amd64: 74f2aeeccfe92f0e76196b69244098fe7df1c8374c0f784dd5e25c57fc291417
+13.2.size.amd64: 57974760
+13.2.source.amd64: "http://appjail.hpc.at/go/13.2-amd64-image.appjail"
 
 tags+: 13.2-119
 13.2-119.arch: amd64
 13.2-119.name: "go"
-13.2-119.timestamp.amd64: 1692008837
-13.2-119.sum.amd64: e2d71d164d8efa2b7ccbd29cf1595057d8c67a443dd208ae0a74a9df4617dbcc
-13.2-119.size.amd64: 75424104
-13.2-119.size.amd64: 57992056
-13.2-119.source.amd64: "https://drive.google.com/uc?export=download&id=1tqVll_siRn1Y_KZ3M7tsmXuOIzUjyItT"
+13.2-119.timestamp.amd64: 1692900819
+13.2-119.sum.amd64: 3b84d4297a7d517b65b6a319a2c486545c12bbb2f6c913807205526e7b12fa2a
+13.2-119.size.amd64: 75150824
+13.2-119.source.amd64: "http://appjail.hpc.at/go/13.2-119-amd64-image.appjail"
 
 tags+: 13.2-120
 13.2-120.arch: amd64
 13.2-120.name: "go"
-13.2-120.timestamp.amd64: 1692010971
-13.2-120.sum.amd64: 0dd14007258fa09ec77ad3f80e779b1e2e3130b035e0785a8611192105a657da
-13.2-120.size.amd64: 57992056
-13.2-120.source.amd64: "https://drive.google.com/uc?export=download&id=1tnMo99L6iHceo658Kh2l6LcIXb3z2GVW"
+13.2-120.timestamp.amd64: 1692960598
+13.2-120.sum.amd64: 7b649e400fbb86f199f20be7c6136263f5f95d9dbf6264d7e971acb6f103547d
+13.2-120.size.amd64: 57279464
+13.2-120.source.amd64: "http://appjail.hpc.at/go/13.2-120-amd64-image.appjail"
+
+tags+: 13.2-121
+13.2-121.arch: amd64
+13.2-121.name: "go"
+13.2-121.timestamp.amd64: 1692902511
+13.2-121.sum.amd64: 167ef5471d134b422d57843c7c0ab3c98c278bffdaf066ec9126412907ceaf51
+13.2-121.size.amd64: 58962384
+13.2-121.source.amd64: "http://appjail.hpc.at/go/13.2-121-amd64-image.appjail"
