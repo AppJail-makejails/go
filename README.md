@@ -160,7 +160,7 @@ appjail image export go
 
 | Tag        | Arch    | Version           | Type   | `go_version` |
 | ---------- | ------- | ----------------- | ------ | ------------ |
-| `13.2`     | `amd64` | `13.2-RELEASE-p4` | `thin` |       -      |
-| `13.2-121` | `amd64` | `13.2-RELEASE-p4` | `thin` |      121     |
-| `13.2-120` | `amd64` | `13.2-RELEASE-p4` | `thin` |      120     |
-| `13.2-119` | `amd64` | `13.2-RELEASE-p4` | `thin` |      119     |
+| `13.2`     | `amd64` | `13.2-RELEASE` | `thin` |       -      |
+| `13.2-121` | `amd64` | `13.2-RELEASE` | `thin` |      121     |
+| `13.2-120` | `amd64` | `13.2-RELEASE` | `thin` |      120     |
+| `13.2-119` | `amd64` | `13.2-RELEASE` | `thin` |      119     |
