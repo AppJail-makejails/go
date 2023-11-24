@@ -126,7 +126,7 @@ Much of the size overhead if for jail, but for big applications this is not harm
 
 * `go_tag` (default: `13.2`): see [#tags](#tags).
 
-## How to use the Image
+## How to build the Image
 
 Make any changes you want to your image.
 
