@@ -126,36 +126,6 @@ Much of the size overhead if for jail, but for big applications this is not harm
 
 * `go_tag` (default: `13.2`): see [#tags](#tags).
 
-## How to build the Image
-
-Make any changes you want to your image.
-
-```
-INCLUDE options/network.makejail
-INCLUDE gh+AppJail-makejails/go --file build.makejail
-```
-
-Build the jail:
-
-```sh
-appjail makejail -j go
-```
-
-Remove unportable or unnecessary files and directories and export the jail:
-
-```sh
-appjail stop go
-appjail cmd local go sh -c "rm -f var/log/*"
-appjail cmd local go sh -c "rm -f var/cache/pkg/*"
-appjail cmd local go sh -c "rm -f var/run/*"
-appjail cmd local go vi etc/rc.conf
-appjail image export go
-```
-
-### Arguments
-
-* `go_version` (optional): Valid versions are `121`, `120` and `119`. If empty (default), the meta-port `lang/go` is used.
-
 ## Tags
 
 | Tag        | Arch    | Version        | Type   | `go_version` |
