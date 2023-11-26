@@ -164,3 +164,7 @@ appjail image export go
 | `13.2-121` | `amd64` | `13.2-RELEASE` | `thin` |    `121`     |
 | `13.2-120` | `amd64` | `13.2-RELEASE` | `thin` |    `120`     |
 | `13.2-119` | `amd64` | `13.2-RELEASE` | `thin` |    `119`     |
+| `14.0`     | `amd64` | `14.0-RELEASE` | `thin` |       -      |
+| `14.0-121` | `amd64` | `14.0-RELEASE` | `thin` |    `121`     |
+| `14.0-120` | `amd64` | `14.0-RELEASE` | `thin` |    `120`     |
+| `14.0-119` | `amd64` | `14.0-RELEASE` | `thin` |    `119`     |
