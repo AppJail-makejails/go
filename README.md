@@ -131,10 +131,12 @@ Much of the size overhead if for jail, but for big applications this is not harm
 | Tag        | Arch    | Version        | Type   | `go_version` |
 | ---------- | ------- | -------------- | ------ | ------------ |
 | `13.2`     | `amd64` | `13.2-RELEASE` | `thin` |       -      |
+| `13.2-122` | `amd64` | `13.2-RELEASE` | `thin` |    `122`     |
 | `13.2-121` | `amd64` | `13.2-RELEASE` | `thin` |    `121`     |
 | `13.2-120` | `amd64` | `13.2-RELEASE` | `thin` |    `120`     |
 | `13.2-119` | `amd64` | `13.2-RELEASE` | `thin` |    `119`     |
 | `14.0`     | `amd64` | `14.0-RELEASE` | `thin` |       -      |
+| `14.0-122` | `amd64` | `14.0-RELEASE` | `thin` |    `122`     |
 | `14.0-121` | `amd64` | `14.0-RELEASE` | `thin` |    `121`     |
 | `14.0-120` | `amd64` | `14.0-RELEASE` | `thin` |    `120`     |
 | `14.0-119` | `amd64` | `14.0-RELEASE` | `thin` |    `119`     |
