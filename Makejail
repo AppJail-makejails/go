@@ -1,5 +1,5 @@
 INCLUDE options/options.makejail
 
-ARG go_tag=13.2
+ARG go_tag=13.3
 
 FROM --entrypoint gh+AppJail-makejails/go go:${go_tag}
