@@ -2,8 +2,8 @@ INCLUDE options/options.makejail
 
 ARG go_version?
 
-RAW if [ -n "${go_version}" ] && ! echo "${go_version}" | grep -Eq '^1(20|21|22)$'; then
-	RAW echo "VALID VERSIONS: 120, 121, 122" >&2
+RAW if [ -n "${go_version}" ] && ! echo "${go_version}" | grep -Eq '^1(20|21|22|23)$'; then
+	RAW echo "VALID VERSIONS: 120, 121, 122, 123" >&2
 	RAW exit 1
 RAW fi
 
