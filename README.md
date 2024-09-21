@@ -18,7 +18,7 @@ OPTION overwrite
 
 INCLUDE options/network.makejail
 
-FROM go:13.3
+FROM go:13.4
 
 WORKDIR /app
 COPY app/
@@ -95,7 +95,7 @@ OPTION overwrite
 
 INCLUDE options/network.makejail
 
-FROM go:13.3
+FROM go:13.4
 
 WORKDIR /app
 COPY app/
@@ -124,16 +124,16 @@ Much of the size overhead if for jail, but for big applications this is not harm
 
 ### Arguments
 
-* `go_tag` (default: `13.3`): see [#tags](#tags).
+* `go_tag` (default: `13.4`): see [#tags](#tags).
 
 ## Tags
 
 | Tag        | Arch    | Version        | Type   | `go_version` |
 | ---------- | ------- | -------------- | ------ | ------------ |
-| `13.3`     | `amd64` | `13.3-RELEASE` | `thin` |       -      |
-| `13.3-122` | `amd64` | `13.3-RELEASE` | `thin` |    `122`     |
-| `13.3-121` | `amd64` | `13.3-RELEASE` | `thin` |    `121`     |
-| `13.3-120` | `amd64` | `13.3-RELEASE` | `thin` |    `120`     |
+| `13.4`     | `amd64` | `13.4-RELEASE` | `thin` |       -      |
+| `13.4-122` | `amd64` | `13.4-RELEASE` | `thin` |    `122`     |
+| `13.4-121` | `amd64` | `13.4-RELEASE` | `thin` |    `121`     |
+| `13.4-120` | `amd64` | `13.4-RELEASE` | `thin` |    `120`     |
 | `14.1`     | `amd64` | `14.1-RELEASE` | `thin` |       -      |
 | `14.1-122` | `amd64` | `14.1-RELEASE` | `thin` |    `122`     |
 | `14.1-121` | `amd64` | `14.1-RELEASE` | `thin` |    `121`     |
