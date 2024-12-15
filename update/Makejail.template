@@ -1,6 +1,6 @@
 INCLUDE options/options.makejail
 
-ARG go_tag=13.4
+ARG go_tag=%%TAG1%%
 ARG go_ajspec=gh+AppJail-makejails/go
 
 FROM --entrypoint "${go_ajspec}" go:${go_tag}

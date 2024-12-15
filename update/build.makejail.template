@@ -1,0 +1,12 @@
+INCLUDE options/options.makejail
+
+ARG go_version?
+
+RAW if [ -n "${go_version}" ]; then
+    RAW case "${go_version}" in
+    RAW     %%GO1%%|%%GO2%%|%%GO3%%|%%GO4%%) ;;
+    RAW     *) echo "VALID VERSIONS: %%GO1%%, %%GO2%%, %%GO3%%, %%GO4%%"; exit 1 ;;
+    RAW esac
+RAW fi
+
+PKG go${go_version}

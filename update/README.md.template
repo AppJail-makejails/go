@@ -18,7 +18,7 @@ OPTION overwrite
 
 INCLUDE options/network.makejail
 
-FROM go:13.4
+FROM go:%%TAG1%%
 
 WORKDIR /app
 COPY app/
@@ -95,7 +95,7 @@ OPTION overwrite
 
 INCLUDE options/network.makejail
 
-FROM go:13.4
+FROM go:%%TAG1%%
 
 WORKDIR /app
 COPY app/
@@ -124,20 +124,20 @@ Much of the size overhead if for jail, but for big applications this is not harm
 
 ### Arguments
 
-* `go_tag` (default: `13.4`): see [#tags](#tags).
+* `go_tag` (default: `%%TAG1%%`): see [#tags](#tags).
 * `go_ajspec` (default: `gh+AppJail-makejails/go`): Entry point where the `appjail-ajspec(5)` file is located.
 
 ## Tags
 
 | Tag        | Arch    | Version        | Type   | `go_version` |
 | ---------- | ------- | -------------- | ------ | ------------ |
-| `13.4`     | `amd64` | `13.4-RELEASE` | `thin` |       -      |
-| `13.4-123` | `amd64` | `13.4-RELEASE` | `thin` |    `123`     |
-| `13.4-122` | `amd64` | `13.4-RELEASE` | `thin` |    `122`     |
-| `13.4-121` | `amd64` | `13.4-RELEASE` | `thin` |    `121`     |
-| `13.4-120` | `amd64` | `13.4-RELEASE` | `thin` |    `120`     |
-| `14.2`     | `amd64` | `14.2-RELEASE` | `thin` |       -      |
-| `14.2-123` | `amd64` | `14.2-RELEASE` | `thin` |    `123`     |
-| `14.2-122` | `amd64` | `14.2-RELEASE` | `thin` |    `122`     |
-| `14.2-121` | `amd64` | `14.2-RELEASE` | `thin` |    `121`     |
-| `14.2-120` | `amd64` | `14.2-RELEASE` | `thin` |    `120`     |
+| `%%TAG1%%`     | `amd64` | `%%TAG1%%-RELEASE` | `thin` |       -      |
+| `%%TAG1%%-%%GO4%%` | `amd64` | `%%TAG1%%-RELEASE` | `thin` |    `%%GO4%%`     |
+| `%%TAG1%%-%%GO3%%` | `amd64` | `%%TAG1%%-RELEASE` | `thin` |    `%%GO3%%`     |
+| `%%TAG1%%-%%GO2%%` | `amd64` | `%%TAG1%%-RELEASE` | `thin` |    `%%GO2%%`     |
+| `%%TAG1%%-%%GO1%%` | `amd64` | `%%TAG1%%-RELEASE` | `thin` |    `%%GO1%%`     |
+| `%%TAG2%%`     | `amd64` | `%%TAG2%%-RELEASE` | `thin` |       -      |
+| `%%TAG2%%-%%GO4%%` | `amd64` | `%%TAG2%%-RELEASE` | `thin` |    `%%GO4%%`     |
+| `%%TAG2%%-%%GO3%%` | `amd64` | `%%TAG2%%-RELEASE` | `thin` |    `%%GO3%%`     |
+| `%%TAG2%%-%%GO2%%` | `amd64` | `%%TAG2%%-RELEASE` | `thin` |    `%%GO2%%`     |
+| `%%TAG2%%-%%GO1%%` | `amd64` | `%%TAG2%%-RELEASE` | `thin` |    `%%GO1%%`     |
