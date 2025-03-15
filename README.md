@@ -18,7 +18,7 @@ OPTION overwrite
 
 INCLUDE options/network.makejail
 
-FROM go:13.4
+FROM go:13.5
 
 WORKDIR /app
 COPY app/
@@ -95,7 +95,7 @@ OPTION overwrite
 
 INCLUDE options/network.makejail
 
-FROM go:13.4
+FROM go:13.5
 
 WORKDIR /app
 COPY app/
@@ -124,18 +124,18 @@ Much of the size overhead if for jail, but for big applications this is not harm
 
 ### Arguments
 
-* `go_tag` (default: `13.4`): see [#tags](#tags).
+* `go_tag` (default: `13.5`): see [#tags](#tags).
 * `go_ajspec` (default: `gh+AppJail-makejails/go`): Entry point where the `appjail-ajspec(5)` file is located.
 
 ## Tags
 
 | Tag        | Arch    | Version        | Type   | `go_version` |
 | ---------- | ------- | -------------- | ------ | ------------ |
-| `13.4`     | `amd64` | `13.4-RELEASE` | `thin` |       -      |
-| `13.4-123` | `amd64` | `13.4-RELEASE` | `thin` |    `123`     |
-| `13.4-122` | `amd64` | `13.4-RELEASE` | `thin` |    `122`     |
-| `13.4-121` | `amd64` | `13.4-RELEASE` | `thin` |    `121`     |
-| `13.4-120` | `amd64` | `13.4-RELEASE` | `thin` |    `120`     |
+| `13.5`     | `amd64` | `13.5-RELEASE` | `thin` |       -      |
+| `13.5-123` | `amd64` | `13.5-RELEASE` | `thin` |    `123`     |
+| `13.5-122` | `amd64` | `13.5-RELEASE` | `thin` |    `122`     |
+| `13.5-121` | `amd64` | `13.5-RELEASE` | `thin` |    `121`     |
+| `13.5-120` | `amd64` | `13.5-RELEASE` | `thin` |    `120`     |
 | `14.2`     | `amd64` | `14.2-RELEASE` | `thin` |       -      |
 | `14.2-123` | `amd64` | `14.2-RELEASE` | `thin` |    `123`     |
 | `14.2-122` | `amd64` | `14.2-RELEASE` | `thin` |    `122`     |
