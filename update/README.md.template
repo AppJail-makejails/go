@@ -136,8 +136,8 @@ Much of the size overhead if for jail, but for big applications this is not harm
 | `%%TAG1%%-%%GO3%%` | `amd64` | `%%TAG1%%-RELEASE` | `thin` |    `%%GO3%%`     |
 | `%%TAG1%%-%%GO2%%` | `amd64` | `%%TAG1%%-RELEASE` | `thin` |    `%%GO2%%`     |
 | `%%TAG1%%-%%GO1%%` | `amd64` | `%%TAG1%%-RELEASE` | `thin` |    `%%GO1%%`     |
-| `%%TAG2%%`     | `amd64` | `%%TAG2%%-RELEASE` | `thin` |       -      |
-| `%%TAG2%%-%%GO4%%` | `amd64` | `%%TAG2%%-RELEASE` | `thin` |    `%%GO4%%`     |
-| `%%TAG2%%-%%GO3%%` | `amd64` | `%%TAG2%%-RELEASE` | `thin` |    `%%GO3%%`     |
-| `%%TAG2%%-%%GO2%%` | `amd64` | `%%TAG2%%-RELEASE` | `thin` |    `%%GO2%%`     |
-| `%%TAG2%%-%%GO1%%` | `amd64` | `%%TAG2%%-RELEASE` | `thin` |    `%%GO1%%`     |
+| `%%TAG2%%`     | `amd64` | `%%TAG2%%` | `thin` |       -      |
+| `%%TAG2%%-%%GO4%%` | `amd64` | `%%TAG2%%` | `thin` |    `%%GO4%%`     |
+| `%%TAG2%%-%%GO3%%` | `amd64` | `%%TAG2%%` | `thin` |    `%%GO3%%`     |
+| `%%TAG2%%-%%GO2%%` | `amd64` | `%%TAG2%%` | `thin` |    `%%GO2%%`     |
+| `%%TAG2%%-%%GO1%%` | `amd64` | `%%TAG2%%` | `thin` |    `%%GO1%%`     |
