@@ -1,6 +1,6 @@
-INCLUDE options/options.makejail
+ARG go_from=ghcr.io/appjail-makejails/go
+ARG go_tag=latest
 
-ARG go_tag=14.3
-ARG go_ajspec=gh+AppJail-makejails/go
-
-FROM --entrypoint "${go_ajspec}" go:${go_tag}
+OPTION start
+OPTION overwrite=force
+OPTION from=${go_from}:${go_tag}

@@ -2,142 +2,89 @@
 
 Go is a statically typed, compiled high-level programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is syntactically similar to C, but with memory safety, garbage collection, structural typing, and CSP-style concurrency. It is often referred to as Golang because of its former domain name, golang.org, but its proper name is Go.
 
-wikipedia.org/wiki/Go_(programming\_language)
+wikipedia.org/wiki/Go_(programming_language)
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/1920px-Go_Logo_Blue.svg.png" alt="go logo" width="60%" height="auto">
+<img src="https://camo.githubusercontent.com/6c8462aa983febb3f0906ce528a857e1f63ea5bd2aa870a53c9a171e4fe7d89a/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f302f30352f476f5f4c6f676f5f426c75652e7376672f3139323070782d476f5f4c6f676f5f426c75652e7376672e706e67" width="30%" height="auto" alt="Go logo">
 
 ## How to use this Makejail
 
-### Basic usage
+### Start a Go instance in your app
 
-Create a `Makejail` in your Go app project.
+The most straightforward way to use this image is to use a Go container as both the build and runtime environment. In your `Containerfile`, writing something along the lines of the following will compile and run your project (assuming it uses `go.mod` for dependency management):
 
-```
-OPTION start
-OPTION overwrite
-
-INCLUDE options/network.makejail
-
-FROM go:14.3
+```dockerfile
+FROM ghcr.io/appjail-makejails/go
 
 WORKDIR /app
-COPY app/
 
-RUN go build hello.go
+COPY go.mod go.sum ./
+RUN go mod download
 
-STAGE cmd
+COPY . .
+RUN go build -v -o /usr/local/bin/app ./...
 
-WORKDIR /app
-RUN ./hello
+CMD ["app"]
 ```
 
-**Note**: Remember that you can use `INCLUDE gh+AppJail-makejails/go` instead of `FROM go:...` to use arguments, but when using a specific version of go, you need to change the entry point when building a golang application.
-
-Where `options/network.makejail` are the options that suit your environment, for example:
-
-```
-ARG network
-ARG interface=goapp
-
-OPTION virtualnet=${network}:${interface} default
-OPTION nat
-```
-
-Open a shell and run `appjail makejail`:
-
-```sh
-appjail makejail -j goapp -- --network development
-```
-
-To run the application we can use `appjail run`:
+You can then build and run the OCI image:
 
 ```console
-# appjail run goapp
-Hello, world!
+$ buildah build --network=host -t my-golang-app .
+$ appjail oci run \
+    -o overwrite=force \
+    -o ephemeral \
+    -o alias \
+    -o ip4_inherit \
+    localhost/my-golang-app my-golang-app
 ```
 
-### Using Makejail builders
+### Compile your app inside the container
 
-If we get the size of the previous jail
+There may be occasions where it is not appropriate to run your app inside a container. To compile, but not run your app inside the container instance, you can write something like:
 
 ```console
-# appjail stop goapp
-...
-# appjail cmd local goapp du -sh
-471M    .
+$ appjail oci run \
+    -o overwrite=force \
+    -o ephemeral \
+    -o alias \
+    -o ip4_inherit \
+    -o fstab="$PWD /myapp" \
+    -w /myapp \
+    localhost/my-golang-app my-golang-app \
+    go build -v
+$ ls ./myapp
+./myapp
 ```
 
-we have a very large jail to run a simple binary. For compiled programming languages we could use Makejail builders to reduce the size of the jail.
+### Arguments (stage: build)
 
-**Makejail**:
+* `go_from` (default: `ghcr.io/appjail-makejails/go`): Location of OCI image. See also [OCI Configuration](#oci-configuration).
+* `go_tag` (default: `latest`): OCI image tag. See also [OCI Configuration](#oci-configuration).
 
-```
-OPTION start
-OPTION overwrite
+## OCI Configuration
 
-EXEC --name goapp-builder --file build.makejail --arg network=development --arg interface=goappb
-
-WORKDIR /app
-COPY --jail goapp-builder /app/hello
-DESTROY --force goapp-builder
-
-STAGE cmd
-
-WORKDIR /app
-RUN ./hello
-```
-
-**build.makejail**:
-
-```
-OPTION start
-OPTION overwrite
-
-INCLUDE options/network.makejail
-
-FROM go:14.3
-
-WORKDIR /app
-COPY app/
-
-RUN go build hello.go
+```yaml
+build:
+  variants:
+    - tag: 15.1
+      containerfile: Containerfile
+      aliases: ["latest"]
+      default: true
+      args:
+        FREEBSD_RELEASE: "15.1"
+    - tag: 15.1-125
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        GOVER: "125"
+    - tag: 15.1-126
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        GOVER: "126"
 ```
 
-For simplicity, `Makejail` does not use more options than necessary, but you can use as many as you want without affecting `build.makejail`.
+## Notes
 
-Open a shell and run `appjail makejail`:
-
-```sh
-appjail makejail -j goapp
-```
-
-Now our jail with the application we want to run has a very reduced size.
-
-```console
-# appjail stop goapp
-...
-# appjail cmd local goapp du -sh
- 14M    .
-```
-
-Much of the size overhead if for jail, but for big applications this is not harmful.
-
-### Arguments
-
-* `go_tag` (default: `14.3`): see [#tags](#tags).
-* `go_ajspec` (default: `gh+AppJail-makejails/go`): Entry point where the `appjail-ajspec(5)` file is located.
-
-## Tags
-
-| Tag        | Arch    | Version        | Type   | `go_version` |
-| ---------- | ------- | -------------- | ------ | ------------ |
-| `14.3`     | `amd64` | `14.3-RELEASE` | `thin` |       -      |
-| `14.3-124` | `amd64` | `14.3-RELEASE` | `thin` |    `124`     |
-| `14.3-123` | `amd64` | `14.3-RELEASE` | `thin` |    `123`     |
-| `14.3-122` | `amd64` | `14.3-RELEASE` | `thin` |    `122`     |
-| `14.3-121` | `amd64` | `14.3-RELEASE` | `thin` |    `121`     |
-| `15`     | `amd64` | `15` | `thin` |       -      |
-| `15-124` | `amd64` | `15` | `thin` |    `124`     |
-| `15-123` | `amd64` | `15` | `thin` |    `123`     |
-| `15-122` | `amd64` | `15` | `thin` |    `122`     |
-| `15-121` | `amd64` | `15` | `thin` |    `121`     |
+1. `/go` is world-writable to allow flexibility in the user which runs the container (for example, in a container started with `--user 1000:1000`, running `go get github.com/example/...` into the default `$GOPATH` will succeed). While the `777` directory would be insecure on a regular host setup, there are not typically other processes or users inside the container, so this is equivalent to `700` for Podman usage, but allowing for `--user` flexibility.
+2. The ideas present in the Docker image of Lychee are taken into account for users who are familiar with it.
