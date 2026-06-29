@@ -56,6 +56,22 @@ $ ls ./myapp
 ./myapp
 ```
 
+### OCI image and Makejail
+
+This repository includes a small `Makejail` that ultimately uses the OCI image, in case you prefer to use `appjail-makejail(5)`.
+
+```console
+$ appjail makejail \
+    -j golang \
+    -f gh+AppJail-makejails/go \
+    -o alias \
+    -o ip4_inherit \
+    -o ephemeral
+...
+$ appjail cmd jexec golang go version
+go version go1.25.11 freebsd/amd64
+```
+
 ### Arguments (stage: build)
 
 * `go_from` (default: `ghcr.io/appjail-makejails/go`): Location of OCI image. See also [OCI Configuration](#oci-configuration).
