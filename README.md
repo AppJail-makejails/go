@@ -50,7 +50,7 @@ $ appjail oci run \
     -o ip4_inherit \
     -o fstab="$PWD /myapp" \
     -w /myapp \
-    localhost/my-golang-app my-golang-app \
+    ghcr.io/appjail-makejails/go my-golang-app \
     go build -v
 $ ls ./myapp
 ./myapp
