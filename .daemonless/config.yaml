@@ -6,13 +6,19 @@ build:
       default: true
       args:
         FREEBSD_RELEASE: "15.1"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-125
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         GOVER: "125"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-126
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         GOVER: "126"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]

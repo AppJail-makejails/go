@@ -78,6 +78,11 @@ go version go1.25.11 freebsd/amd64
 * `go_from` (default: `ghcr.io/appjail-makejails/go`): Location of OCI image. See also [OCI Configuration](#oci-configuration).
 * `go_tag` (default: `latest`): OCI image tag. See also [OCI Configuration](#oci-configuration).
 
+### Environment (OCI image)
+
+* `PGID` (default: `1000`): Equivalent to `PUID` but for the Process Group ID.
+* `PUID` (default: `1000`): Process User ID for the container's main process, allowing you to match the owner of files written to mounted host volumes to your host system's user. Writable volumes are changed based on this environment variable.
+
 ## OCI Configuration
 
 ```yaml
@@ -89,16 +94,22 @@ build:
       default: true
       args:
         FREEBSD_RELEASE: "15.1"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-125
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         GOVER: "125"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-126
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         GOVER: "126"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
 ```
 
 ## Notes
